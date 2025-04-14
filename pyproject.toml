@@ -1,0 +1,10 @@
+[project]
+name = "ykicks_contracts"
+version = "0.1.0"
+description = "smart contracts for ykicks"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "vyper==0.4.1",
+    "mamushi==0.0.4",
+]
