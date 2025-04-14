@@ -3,7 +3,7 @@
 """
 @title Ownable 2-step
 @license MIT
-@author yearn.finance, asymmetry.finance
+@author yearn.finance (johnnyonline)
 @notice ownable_2step.vy is a two-step ownable contract that allows for a two-step transfer of ownership
 """
 
