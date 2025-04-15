@@ -12,7 +12,11 @@ import "forge-std/Script.sol";
 
 // deploy:
 // forge script script/Deploy.s.sol:Deploy --verify --slow --legacy --etherscan-api-key $KEY --rpc-url $RPC_URL --broadcast
-// @todo -- here -- deploy
+
+// verify:
+// 1. `forge build --build-info src/ykicks.vy`
+// 2. take the `input` part of the resulting json ^^ and paste it in etherscan's json verification
+
 contract Deploy is Script {
     bool public isTest;
     address public deployer;
@@ -25,9 +29,10 @@ contract Deploy is Script {
         VmSafe.Wallet memory _wallet = vm.createWallet(_pk);
         deployer = _wallet.addr;
 
-        uint256 _ownerPk = isTest ? 69420 : vm.envUint("OWNER_PRIVATE_KEY");
-        VmSafe.Wallet memory _ownerWallet = vm.createWallet(_ownerPk);
-        owner = _ownerWallet.addr;
+        // uint256 _ownerPk = isTest ? 69420 : vm.envUint("OWNER_PRIVATE_KEY");
+        // VmSafe.Wallet memory _ownerWallet = vm.createWallet(_ownerPk);
+        // owner = _ownerWallet.addr;
+        owner = deployer;
 
         vm.startBroadcast(_pk);
 
@@ -45,3 +50,7 @@ contract Deploy is Script {
         }
     }
 }
+
+// Deployer address: 0x6969F5AdF4A29B51182e677285542b3fF19E98D5
+// Owner address: 0x6969F5AdF4A29B51182e677285542b3fF19E98D5
+// yKicks address: 0xa433B1aD880Ce8c18dC014b87F5D5416b9d27FC3
