@@ -91,5 +91,5 @@ def execute(
     @param data Data to send with the call
     @return response Data returned from the call
     """
-    assert self.approved_callers[msg.sender], "!approved_caller"
+    assert self.approved_callers[msg.sender], "!caller"
     return raw_call(to, data, max_outsize=4096)
