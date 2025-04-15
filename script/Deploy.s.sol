@@ -29,10 +29,9 @@ contract Deploy is Script {
         VmSafe.Wallet memory _wallet = vm.createWallet(_pk);
         deployer = _wallet.addr;
 
-        // uint256 _ownerPk = isTest ? 69420 : vm.envUint("OWNER_PRIVATE_KEY");
-        // VmSafe.Wallet memory _ownerWallet = vm.createWallet(_ownerPk);
-        // owner = _ownerWallet.addr;
-        owner = deployer;
+        uint256 _ownerPk = isTest ? 69420 : vm.envUint("OWNER_PRIVATE_KEY");
+        VmSafe.Wallet memory _ownerWallet = vm.createWallet(_ownerPk);
+        owner = _ownerWallet.addr;
 
         vm.startBroadcast(_pk);
 
