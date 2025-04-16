@@ -20,6 +20,11 @@ jobs:
         with:
           submodules: recursive
       
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo MAINNET_RPC_URL=${{ secrets.MAINNET_RPC_URL }} >> .env
+      
       - name: Install Vyper
         run: pip install vyper==0.4.1
       
