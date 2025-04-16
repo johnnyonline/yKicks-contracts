@@ -15,7 +15,7 @@ import "forge-std/Script.sol";
 
 // verify:
 // 1. `forge build --build-info src/ykicks.vy`
-// 2. take the `input` part of the resulting json ^^ and paste it in etherscan's json verification
+// 2. take the `input` part of the resulting json ^^ and paste it in etherscan's json verification (https://docs.vyperlang.org/en/stable/compiling-a-contract.html#compiler-input-and-output-json-description)
 
 contract Deploy is Script {
     bool public isTest;
@@ -53,3 +53,5 @@ contract Deploy is Script {
 // Deployer address: 0x6969F5AdF4A29B51182e677285542b3fF19E98D5
 // Owner address: 0x6969F5AdF4A29B51182e677285542b3fF19E98D5
 // yKicks address: 0xa433B1aD880Ce8c18dC014b87F5D5416b9d27FC3
+
+cast abi-encode "constructor(address)" 0x6969F5AdF4A29B51182e677285542b3fF19E98D5
