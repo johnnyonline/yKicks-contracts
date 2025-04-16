@@ -53,5 +53,4 @@ contract Deploy is Script {
 // Deployer address: 0x6969F5AdF4A29B51182e677285542b3fF19E98D5
 // Owner address: 0x6969F5AdF4A29B51182e677285542b3fF19E98D5
 // yKicks address: 0xa433B1aD880Ce8c18dC014b87F5D5416b9d27FC3
-
-cast abi-encode "constructor(address)" 0x6969F5AdF4A29B51182e677285542b3fF19E98D5
+// cast abi-encode "constructor(address)" 0x6969F5AdF4A29B51182e677285542b3fF19E98D5
